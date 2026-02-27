@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+<link id="dynamic-favicon" rel="icon" href="/bg.png" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TREZEAL </title>
+    <meta name="description" content="TREZEAL delivers enterprise software development, web applications, AI solutions, and industrial automation for Fortune 500 companies worldwide." />
+    <meta name="keywords" content="industrial automation, AI, machine learning, CNC optimization, electrical systems, smart factory, Industry 4.0" />
+
+    <meta property="og:title" content="TREZEAL Industry - Enterprise Technology Solutions" />
+    <meta property="og:description" content="Enterprise software development, web applications, AI solutions, and industrial automation for global corporations." />
+    <meta property="og:type" content="website" />
+    
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@trezeal" />
+     
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" media="all" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+  <script>
+  const icons = ["/bg.png ", "/bgg.png"];
+  let currentIndex = 0;
+  
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % 2; // Toggles between 0 and 1
+    document.getElementById("dynamic-favicon").href = icons[currentIndex];
+  }, 2000);
+</script>
+</html>
