@@ -49,14 +49,15 @@ export const Header = () => {
               T
             </div> */}
             <span className="font-display text-xl font-bold text-foreground">
-            <img 
-                src={theme === "dark" ? "/bgg.png" : "/bg.png"} 
-                alt="TREZEAL Logo" 
-                className="h-8 w-auto" 
+              <img
+                src={theme === "dark" ? "/bgg.png" : "/black.png"}
+                alt="TREZEAL Logo"
+                className="animate-pulse-3d"
+                style={{ height: "32px", width: "auto", display: "block" }}
               />
-              
-               
-           
+
+
+
             </span>
           </Link>
 

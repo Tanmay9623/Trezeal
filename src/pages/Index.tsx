@@ -19,16 +19,25 @@ const ModernScrollBackground = React.lazy(() => import("@/components/ModernScrol
 const PageLoader = () => (
   <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
     <div className="flex flex-col items-center gap-4">
-      <div className="relative w-16 h-16">
-        <div className="absolute inset-0 rounded-full border-2 border-primary/20" />
-        <div className="absolute inset-0 rounded-full border-2 border-t-primary animate-spin" />
-      </div>
-      <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center font-bold text-primary-foreground text-lg shadow-lg">
-        T
-      </div>
+      <img
+        src="/black.png"
+        alt="TREZEAL Logo"
+        style={{
+          height: "48px",
+          width: "auto",
+          animation: "pulse-3d 3s ease-in-out infinite",
+        }}
+      />
+      <style>{`
+        @keyframes pulse-3d {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.10); opacity: 0.75; }
+        }
+      `}</style>
     </div>
   </div>
 );
+
 
 const Index = () => {
   return (
