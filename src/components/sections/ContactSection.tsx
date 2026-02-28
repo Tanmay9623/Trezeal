@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+
+// ✅ Free form endpoint from https://formspree.io
+const FORMSPREE_ID = "xjgezjdd";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,10 +15,28 @@ export const ContactSection = () => {
     company: "",
     message: ""
   });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    setStatus("loading");
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -80,24 +101,44 @@ export const ContactSection = () => {
             <form onSubmit={handleSubmit} className="glass-card space-y-5">
               <h3 className="font-display text-xl font-semibold mb-4">Send a Message</h3>
 
+              {/* Success banner */}
+              {status === "success" && (
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400">
+                  <CheckCircle className="w-5 h-5 shrink-0" />
+                  <p className="text-sm font-medium">Message sent! We'll get back to you soon.</p>
+                </div>
+              )}
+
+              {/* Error banner */}
+              {status === "error" && (
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400">
+                  <AlertCircle className="w-5 h-5 shrink-0" />
+                  <p className="text-sm font-medium">Something went wrong. Please try again or email us directly.</p>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Name</label>
+                  <label className="block text-sm font-medium mb-1.5">Name *</label>
                   <Input
+                    required
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-background"
+                    disabled={status === "loading"}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1.5">Email</label>
+                  <label className="block text-sm font-medium mb-1.5">Email *</label>
                   <Input
+                    required
                     type="email"
                     placeholder="john@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-background"
+                    disabled={status === "loading"}
                   />
                 </div>
               </div>
@@ -109,23 +150,45 @@ export const ContactSection = () => {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="bg-background"
+                  disabled={status === "loading"}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1.5">Message</label>
+                <label className="block text-sm font-medium mb-1.5">Message *</label>
                 <Textarea
+                  required
                   placeholder="Tell us about your project..."
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="bg-background resize-none"
+                  disabled={status === "loading"}
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full group">
-                Send Message
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full group"
+                disabled={status === "loading" || status === "success"}
+              >
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : status === "success" ? (
+                  <>
+                    <CheckCircle className="w-4 h-4" />
+                    Sent!
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>
