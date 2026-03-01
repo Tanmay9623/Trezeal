@@ -85,7 +85,7 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <div className="text-xs text-muted-foreground">Location</div>
-                  <div className="font-medium">India</div>
+                  <div className="font-medium">Pune,Maharashtra,India</div>
                 </div>
               </div>
             </div>

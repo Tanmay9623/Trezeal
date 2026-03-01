@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
-
+import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, Instagram, Facebook } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 export const Footer = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
     <footer className="bg-card border-t border-border">
       <div className="container-max px-4 md:px-8 py-12">
@@ -9,8 +10,13 @@ export const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center font-display font-bold text-primary-foreground text-lg">
-                T
+              <div className="font-display text-xl font-bold text-foreground">
+                <img
+                src={theme === "dark" ? "/bgg.png" : "/black.png"}
+                alt="TREZEAL Logo"
+                className="animate-pulse-3d"
+                style={{ height: "32px", width: "auto", display: "block" }}
+              />
               </div>
               <span className="font-display text-xl font-bold">TREZEAL</span>
             </Link>
@@ -18,14 +24,14 @@ export const Footer = () => {
               Enterprise technology solutions. Software, web development, AI & industrial automation.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="https://www.linkedin.com/company/trezeal/?viewAsMember=true" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Twitter className="w-4 h-4" />
+              <a href="https://www.facebook.com/profile.php?id=61586432185159" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Youtube className="w-4 h-4" />
+              <a href="https://www.instagram.com/trezeal_/" className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
