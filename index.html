@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
  <head>
-  <link id="dynamic-favicon" rel="icon" href="/bgg.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/bgg.png">
+<link rel="shortcut icon" href="/bgg.png">
+  <!-- <link id="dynamic-favicon" rel="icon" href="/bgg.png" /> -->
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,9 +60,9 @@
   const icons = ["/black.png ", "/bgg.png"];
   let currentIndex = 0;
   
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % 2; // Toggles between 0 and 1
-    document.getElementById("dynamic-favicon").href = icons[currentIndex];
-  }, 2000);
+  // setInterval(() => {
+  //   currentIndex = (currentIndex + 1) % 2; // Toggles between 0 and 1
+  //   document.getElementById("dynamic-favicon").href = icons[currentIndex];
+  // }, 2000);
 </script>
 </html>
