@@ -327,6 +327,37 @@
   }
 }
 
+@media (max-width: 639px) {
+  .work-step {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: center;
+    column-gap: var(--cap-space-2);
+    row-gap: var(--cap-space-1);
+  }
+
+  .work-step-number {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    margin: 0;
+    background: var(--cap-accent);
+    color: var(--cap-accent-ink);
+    border-radius: 50%;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+  }
+
+  .work-step h3 {
+    margin: 0;
+  }
+
+  .work-step p {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (min-width: 1024px) {
   .capabilities-grid,
   .delivery-standards,
