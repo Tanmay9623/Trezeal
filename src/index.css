@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "./vanilla.css";
+
+.brand-mark-logo {
+  display: block;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.footer .brand-mark-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.react-page {
+  background: var(--paper);
+  min-height: 60vh;
+}
+.react-page .page-hero {
+  background: var(--dark);
+  color: #fff;
+  padding: 110px 0 100px;
+}
+.react-page .page-hero h1 {
+  font: 600 clamp(48px, 7vw, 88px)/1 var(--display);
+  letter-spacing: -0.07em;
+  margin: 0;
+}
+.react-page .page-hero h1 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--accent);
+}
+.react-page .page-hero p {
+  max-width: 620px;
+  color: #cbd6ce;
+  font: 20px/1.5 var(--serif);
+  margin: 28px 0;
+}
+.react-page .page-body {
+  padding: 110px 0;
+}
+.react-page .page-body h2 {
+  font: 600 clamp(40px, 5vw, 66px)/1.08 var(--display);
+  letter-spacing: -0.07em;
+  margin: 0 0 20px;
+}
+.react-page .page-body h2 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: #78847c;
+}
+.react-page .page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 45px;
+}
+.react-page .page-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 30px;
+  min-height: 200px;
+}
+.react-page .page-card h3 {
+  font: 600 21px var(--display);
+  margin: 22px 0 8px;
+}
+.react-page .page-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.react-page .page-cta {
+  background: var(--dark);
+  color: #fff;
+  padding: 75px 0;
+}
+.react-page .faq-list {
+  max-width: 850px;
+  border-top: 1px solid var(--line);
+}
+.react-page .faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.react-page .faq-item button {
+  width: 100%;
+  border: 0;
+  background: none;
+  text-align: left;
+  padding: 22px 0;
+  font: 600 16px var(--display);
+  display: flex;
+  justify-content: space-between;
+}
+.react-page .faq-item p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.react-page .contact-page-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+}
+.react-page .contact-page-form {
+  background: #fff;
+  padding: 35px;
+}
+.react-page .contact-page-form label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 19px;
+}
+.react-page .contact-page-form input,
+.react-page .contact-page-form textarea,
+.react-page .contact-page-form select {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 11px 0;
+  outline: 0;
+}
+.react-page .contact-page-form .btn {
+  margin-top: 10px;
+}
+@media (max-width: 760px) {
+  .react-page .page-hero {
+    padding: 78px 0 70px;
+  }
+  .react-page .page-body {
+    padding: 75px 0;
+  }
+  .react-page .page-grid,
+  .react-page .contact-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-hero-with-image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--dark) !important;
+}
+
+.page-hero-with-image .page-hero-image {
+  z-index: 0;
+  display: block;
+}
+
+.page-hero-with-image .page-hero-image-wrap {
+  z-index: 0;
+  height: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.page-hero-with-image .page-hero-image-wrap img {
+  opacity: 0;
+}
+
+.page-hero-overlay {
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(16, 29, 21, 0.9),
+    rgba(16, 29, 21, 0.58)
+  );
+}
+
+.hero .hero-bg {
+  background-attachment: fixed;
+}
+
+.image-band {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image-band img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.image-band-caption {
+  position: sticky;
+  inset: 0;
+  top: 0;
+  z-index: 2;
+  height: 430px;
+}
+
+@media (max-width: 760px) {
+  .page-hero-with-image .page-hero-image-wrap {
+    background-attachment: fixed;
+  }
+
+  .hero .hero-bg,
+  .image-band {
+    background-attachment: fixed;
+  }
+
+  .image-band-caption {
+    height: 300px;
+  }
+}
