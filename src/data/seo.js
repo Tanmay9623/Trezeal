@@ -4,7 +4,7 @@ export const seoByPath = {
   "/": {
     title: "Trezeal | Technology, Creativity & Growth",
     description:
-      "Trezeal builds digital solutions for businesses and practical career pathways for students and freshers.",
+      "Trezeal offers AI solutions, workflow automation, responsive web design, custom software, data dashboards and career support.",
   },
   "/about": {
     title: "About Trezeal | Technology & Digital Solutions",
@@ -116,7 +116,7 @@ export const seoByPath = {
 export const defaultSeo = {
   title: "Trezeal | Technology & Digital Solutions",
   description:
-    "Trezeal provides practical technology, digital solutions and career development guidance.",
+    "Trezeal offers AI solutions, workflow automation, responsive web design, custom software, data dashboards and career support.",
 };
 
 export { siteUrl };

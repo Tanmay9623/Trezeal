@@ -4,9 +4,7 @@ import AboutSection from "./AboutSection.jsx";
 import SkillsSection from "./SkillsSection.jsx";
 import StudentSection from "./StudentSection.jsx";
 import HighlightsSection from "./HighlightsSection.jsx";
-import TrustSection from "./TrustSection.jsx";
-import TestimonialsSection from "./TestimonialsSection.jsx";
-import ProcessSection from "./ProcessSection.jsx";
+import CapabilitiesSection from "./CapabilitiesSection.jsx";
 import HomeDetailsSection from "./HomeDetailsSection.jsx";
 import ProjectsCarousel from "./ProjectsCarousel.jsx";
 import HomeFaqSection from "./HomeFaqSection.jsx";
@@ -37,11 +35,9 @@ export default function Home() {
       </section>
       <StudentSection />
       <HighlightsSection />
-      <TrustSection />
-      <ProcessSection />
+      <CapabilitiesSection />
       <HomeDetailsSection />
       <ProjectsCarousel />
-      <TestimonialsSection />
       <HomeFaqSection />
       <ContactSection />
     </>

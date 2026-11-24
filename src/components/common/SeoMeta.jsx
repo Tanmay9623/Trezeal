@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { articles } from "../../data/articles.js";
 import { faqItems } from "../../data/faqItems.js";
 import { defaultSeo, seoByPath, siteUrl } from "../../data/seo.js";
+import { capabilities } from "../home/capabilitiesData.js";
 
 function setMetaTag(attribute, value, content) {
   let element = document.head.querySelector(`meta[${attribute}="${value}"]`);
@@ -105,7 +106,18 @@ export default function SeoMeta() {
       logo: `${siteUrl}/brand-mark.svg`,
       email: "hello@trezeal.com",
       description:
-        "Technology and digital solutions for businesses, with practical career development guidance for students and freshers.",
+        "AI solutions, workflow automation, responsive website design, custom software, reporting dashboards, digital project support, and career preparation.",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services offered",
+        itemListElement: capabilities.map(({ title }) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: title,
+          },
+        })),
+      },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",
