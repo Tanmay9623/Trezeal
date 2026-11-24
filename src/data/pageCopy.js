@@ -39,9 +39,4 @@ export const pageCopy = {
     "Your ideas. Our technology.",
     "Websites, landing pages, e-commerce, design and custom builds.",
   ],
-  "/resources": [
-    "RESOURCES",
-    "Learn, build and move forward.",
-    "A growing resource hub for programming, interviews, resumes and career roadmaps.",
-  ],
 };

@@ -1,12 +1,9 @@
-const unsplash = (photoId) =>
-  `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=2200&q=85`;
-
-const fallbackImage = unsplash("photo-1497366754035-f200968a6e72");
+const fallbackImage = "/images/photos/workspace.jpg";
 
 export const pageHeroes = {
   home: {
-    image: unsplash("photo-1497366754035-f200968a6e72"),
-    alt: "Modern technology workspace with collaborative desks",
+    image: "/images/photos/workspace.jpg",
+    alt: "Contemporary glass-walled office workspace",
     objectPosition: "center",
   },
   "/about": {
@@ -14,8 +11,8 @@ export const pageHeroes = {
     title: "Technology That Moves Ideas Forward.",
     description:
       "Trezeal is an IT services and technology consulting company serving businesses, students and freelance clients.",
-    image: unsplash("photo-1521737604583-711a0cfc45dc"),
-    alt: "Professional team collaborating around a table",
+    image: "/images/photos/learning.jpg",
+    alt: "Small group collaborating around a laptop",
     objectPosition: "center 42%",
   },
   "/services": {
@@ -23,8 +20,8 @@ export const pageHeroes = {
     title: "Digital capabilities for the next stage of your work.",
     description:
       "Software, web, AI, business, design and support services shaped around real needs.",
-    image: unsplash("photo-1556761175-b413da4baf72"),
-    alt: "Technology team discussing a digital project",
+    image: "/images/photos/learning.jpg",
+    alt: "Colleagues sharing ideas around a laptop",
     objectPosition: "center",
   },
   "/services/software-development": {
@@ -32,8 +29,8 @@ export const pageHeroes = {
     title: "Software that fits the way you work.",
     description:
       "Custom software, full-stack applications, SaaS products, APIs and database-backed tools.",
-    image: unsplash("photo-1518770660439-4636190af475"),
-    alt: "Developer coding beside multiple computer screens",
+    image: "/images/photos/technology.jpg",
+    alt: "Laptop displaying code on a bright desk",
     objectPosition: "center 44%",
   },
   "/services/ai-automation": {
@@ -41,8 +38,8 @@ export const pageHeroes = {
     title: "AI with a clear purpose.",
     description:
       "Generative AI, LLM integrations, agents and workflow automation without unnecessary complexity.",
-    image: unsplash("photo-1677442136019-21780ecad995"),
-    alt: "Abstract artificial intelligence technology visualization",
+    image: "/images/photos/ai.jpg",
+    alt: "Blue artificial intelligence lettering in a digital illustration",
     objectPosition: "center",
   },
   "/services/business-solutions": {
@@ -50,8 +47,8 @@ export const pageHeroes = {
     title: "Systems that make work clearer.",
     description:
       "Automation, CRM, analytics dashboards, data intelligence and operational tools.",
-    image: unsplash("photo-1556761175-5973dc0f32e7"),
-    alt: "Business professionals collaborating in a bright office",
+    image: "/images/photos/workspace.jpg",
+    alt: "Glass-walled office with a shared lounge area",
     objectPosition: "center 38%",
   },
   "/students": {
@@ -59,8 +56,8 @@ export const pageHeroes = {
     title: "Learn. Build. Prepare. Grow.",
     description:
       "Practical learning, project mentorship and interview preparation for students and freshers.",
-    image: unsplash("photo-1523240795612-9a054b0db644"),
-    alt: "Students learning together with laptops",
+    image: "/images/photos/learning.jpg",
+    alt: "Three learners working together around a laptop",
     objectPosition: "center 42%",
   },
   "/interview-preparation": {
@@ -68,8 +65,8 @@ export const pageHeroes = {
     title: "Prepare for the interview in front of you.",
     description:
       "Technical, HR, coding and communication practice with clear feedback.",
-    image: unsplash("photo-1551836022-d5d88e9218df"),
-    alt: "Professionals preparing for a focused interview meeting",
+    image: "/images/photos/team.jpg",
+    alt: "Small group working together at a table with laptops",
     objectPosition: "center 40%",
   },
   "/freelance": {
@@ -77,8 +74,8 @@ export const pageHeroes = {
     title: "Your ideas. Our technology.",
     description:
       "Websites, landing pages, e-commerce, design and custom builds.",
-    image: unsplash("photo-1499750310107-5fef28a66643"),
-    alt: "Creative freelancer working on a laptop",
+    image: "/images/photos/creative.jpg",
+    alt: "Person pointing at a laptop during a discussion",
     objectPosition: "center",
   },
   "/projects": {
@@ -87,8 +84,8 @@ export const pageHeroes = {
     emphasis: "practical.",
     description:
       "Known Trezeal project categories without invented clients, metrics or unverified links.",
-    image: unsplash("photo-1460925895917-afdab827c52f"),
-    alt: "Web application design displayed on a laptop",
+    image: "/images/photos/technology.jpg",
+    alt: "Laptop displaying a code editor",
     objectPosition: "center 45%",
   },
   "/resources": {
@@ -96,8 +93,8 @@ export const pageHeroes = {
     title: "Learn, build and move forward.",
     description:
       "A growing resource hub for programming, interviews, resumes and career roadmaps.",
-    image: unsplash("photo-1456324504439-367cee3b3c32"),
-    alt: "Laptop and programming books in a learning workspace",
+    image: "/images/photos/resources.jpg",
+    alt: "Hands writing notes in an open planner beside coffee",
     objectPosition: "center 45%",
   },
   "/contact": {
@@ -105,8 +102,28 @@ export const pageHeroes = {
     title: "Let’s make the next step clear.",
     description:
       "Tell us about your business project, freelance requirement or career goals.",
-    image: unsplash("photo-1517245386807-434b7c0a5d6b"),
-    alt: "Professional office meeting and communication workspace",
+    image: "/images/photos/contact.jpg",
+    alt: "Bright contemporary office lounge",
+    objectPosition: "center",
+  },
+  "/pricing": {
+    eyebrow: "PRICING",
+    title: "Clear scope.",
+    emphasis: "Practical investment.",
+    description:
+      "Understand engagement options, dependencies and payment terms before approving a proposal.",
+    image: "/images/photos/learning.jpg",
+    alt: "Colleagues discussing an idea around a laptop",
+    objectPosition: "center",
+  },
+  "/careers": {
+    eyebrow: "CAREERS AND PARTNERS",
+    title: "Make useful work",
+    emphasis: "with us.",
+    description:
+      "Explore collaboration in technology delivery, digital experience and practical learning.",
+    image: "/images/photos/team.jpg",
+    alt: "Small group collaborating around laptops",
     objectPosition: "center",
   },
   faq: {
@@ -115,8 +132,8 @@ export const pageHeroes = {
     emphasis: "without the jargon.",
     description:
       "Common questions about Trezeal services, projects, mentorship and preparation.",
-    image: unsplash("photo-1516321318423-f06f85e504b3"),
-    alt: "Person learning with a laptop in a focused workspace",
+    image: "/images/photos/learning.jpg",
+    alt: "Learners sharing a laptop at a table",
     objectPosition: "center 40%",
   },
   generic: {
@@ -126,7 +143,7 @@ export const pageHeroes = {
     description:
       "Technology, digital solutions and practical guidance from Trezeal.",
     image: fallbackImage,
-    alt: "Bright collaborative technology workspace",
+    alt: "Contemporary office workspace with glass meeting rooms",
     objectPosition: "center",
   },
 };

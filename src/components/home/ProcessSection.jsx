@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ProcessSection() {
   return (
     <section className="process section-pad" id="process">
@@ -19,9 +21,8 @@ export default function ProcessSection() {
           {[
             "Understand your goals",
             "Plan the right approach",
-            "Build and practise",
-            "Review and improve",
-            "Support the next step",
+            "Build and review",
+            "Hand over the next step",
           ].map((step, index) => (
             <article key={step}>
               <span>0{index + 1}</span>
@@ -35,6 +36,9 @@ export default function ProcessSection() {
             </article>
           ))}
         </div>
+        <Link className="btn btn-dark section-cta" to="/contact">
+          Start a conversation <span>↗</span>
+        </Link>
       </div>
     </section>
   );

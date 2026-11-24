@@ -8,7 +8,7 @@ export default function AboutSection() {
         <div className="about-visual">
           <img
             src={image(photos.about, 1100)}
-            alt="Bright modern collaborative workspace"
+            alt="Small group collaborating around laptops at a shared table"
           />
           <div className="image-note">
             <strong>01—03</strong>

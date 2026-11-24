@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#172723"/>
+      <stop offset="1" stop-color="#38544e"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1600v900H0z"/>
+  <circle cx="1260" cy="160" r="280" fill="#d2ef65" fill-opacity=".12"/>
+  <path fill="#d8e4d8" d="M760 180h610v440H760z"/>
+  <path fill="#96b39a" d="M1050 180h22v440h-22zM760 395h610v18H760z"/>
+  <path fill="#d2ef65" d="M190 265h360v250H190z"/>
+  <path fill="#20372f" d="M220 295h300v190H220z"/>
+  <path fill="#d2ef65" d="M250 330h235v11H250zM250 364h200v9H250zM250 398h218v9H250zM250 432h160v9H250z"/>
+  <path fill="#1c3029" d="M90 655h1370v36H90z"/>
+  <path fill="#3c574a" d="M250 690h90v150h-90zM1230 690h90v150h-90z"/>
+  <path fill="#d2ef65" d="M400 620h620v26H400z"/>
+  <circle cx="1195" cy="520" r="68" fill="#e3b89a"/>
+  <path fill="#25332c" d="M1127 513c5-90 135-93 142-2l-42-22-30-32-31 34-39 22z"/>
+  <path fill="#d2ef65" d="M1134 603c20-60 108-60 128 0l38 53h-204z"/>
+</svg>

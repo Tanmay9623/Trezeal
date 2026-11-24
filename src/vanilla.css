@@ -268,13 +268,13 @@ button {
   opacity: 1;
 }
 .hero-bg-one {
-  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=90");
+  background-image: none;
 }
 .hero-bg-two {
-  background-image: url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2200&q=90");
+  background-image: none;
 }
 .hero-bg-three {
-  background-image: url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2200&q=90");
+  background-image: none;
 }
 .hero-shade {
   position: absolute;
@@ -1334,9 +1334,10 @@ h2 em,
       padding 0.35s;
   }
   .mobile-menu.open {
-    max-height: 420px;
+    max-height: min(75vh, 560px);
     padding: 15px 25px 25px;
     border-top: 1px solid var(--line);
+    overflow-y: auto;
   }
   .mobile-menu a {
     padding: 12px 0;

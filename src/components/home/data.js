@@ -1,12 +1,12 @@
 export const photos = {
   hero: [
-    "photo-1497366754035-f200968a6e72",
-    "photo-1524758631624-e2822e304c36",
-    "photo-1497366811353-6870744d04b2",
+    "/images/photos/workspace.jpg",
+    "/images/photos/learning.jpg",
+    "/images/photos/technology.jpg",
   ],
-  about: "photo-1522071820081-009f0129c71c",
-  band: "photo-1497366216548-37526070297c",
-  students: "photo-1522202176988-66273c2fd55f",
+  about: "/images/photos/team.jpg",
+  band: "/images/photos/workspace.jpg",
+  students: "/images/photos/learning.jpg",
 };
 
 export const studentSectionContent = {
@@ -16,10 +16,9 @@ export const studentSectionContent = {
   description:
     "Move beyond tutorials with practical learning, project mentorship and career preparation designed for students and freshers.",
   linkLabel: "Explore student guidance",
-  imageAlt: "Students collaborating around a table",
+  imageAlt: "Three learners working together around a laptop",
   videoLabel: "Build your skills with purpose",
   videoCategory: "STUDENT SUPPORT",
 };
 
-export const image = (id, width = 1200) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`;
+export const image = (source) => source;

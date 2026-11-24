@@ -1,59 +1,92 @@
 import { Link } from "react-router-dom";
 
 import PageHero from "../components/common/PageHero.jsx";
+import ContentSections from "../components/common/ContentSections.jsx";
+import { pageContent } from "../data/pageContent.js";
+import { extendedSections } from "../data/expandedContent.js";
 import { pageHeroes } from "../data/pageHeroes.js";
 
-export default function InnerPage({ copy, hero = pageHeroes.generic }) {
+function ContentCard({ card, index }) {
+  const content = (
+    <>
+      <span className="card-number">0{index + 1}</span>
+      <h3>{card.title}</h3>
+      <p>{card.copy}</p>
+      {card.to && <span className="text-link">Explore this area ↗</span>}
+    </>
+  );
+
+  if (card.to) {
+    return (
+      <Link className="page-card page-card-link" to={card.to}>
+        {content}
+      </Link>
+    );
+  }
+
+  return <article className="page-card">{content}</article>;
+}
+
+export default function InnerPage({ path, copy, hero = pageHeroes.generic }) {
+  const content = pageContent[path];
+
   return (
     <div className="react-page">
       <PageHero key={hero.image} {...hero}>
         <div className="button-row">
-          <Link className="btn btn-light" to="/contact">
-            Start a conversation <span>↗</span>
-          </Link>
-          <Link className="btn btn-dark" to="/services">
-            Explore services <span>↗</span>
+          <Link className="btn btn-light" to={content?.ctaTo ?? "/contact"}>
+            {content?.ctaLabel ?? "Start a conversation"} <span>↗</span>
           </Link>
         </div>
       </PageHero>
+
       <section className="page-body">
         <div className="container">
           <p className="eyebrow">
             <span />
-            TREZEAL
+            {content?.introEyebrow ?? copy[0]}
           </p>
-          <h2>
-            Practical work.
-            <br />
-            <em>Clear next steps.</em>
-          </h2>
-          <p className="page-intro">{copy[2]}</p>
-          <div className="page-grid">
-            {[
-              "Understand the requirement",
-              "Plan the right approach",
-              "Build and review",
-              "Support the next step",
-            ].map((item, index) => (
-              <article className="page-card" key={item}>
-                <span className="card-number">0{index + 1}</span>
-                <h3>{item}</h3>
-                <p>
-                  We keep scope clear, work from verified requirements and
-                  communicate honestly throughout.
-                </p>
-              </article>
-            ))}
-          </div>
+          <h2>{content?.introTitle ?? copy[1]}</h2>
+          <p className="page-intro">
+            {content?.introCopy ?? copy[2]}
+          </p>
         </div>
       </section>
+
+      {content?.sections.map((section) => (
+        <section className="page-detail-section" key={section.title}>
+          <div className="container">
+            <p className="eyebrow">
+              <span />
+              {section.eyebrow}
+            </p>
+            <h2>{section.title}</h2>
+            {section.copy && <p className="page-intro">{section.copy}</p>}
+            <div className="page-grid">
+              {section.cards.map((card, index) => (
+                <ContentCard
+                  card={card}
+                  index={index}
+                  key={card.title}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <ContentSections sections={extendedSections[path]} />
+
       <section className="page-cta">
         <div className="container">
           <h2>
-            Ready for the next <em>step?</em>
+            Ready to take a <em>clear next step?</em>
           </h2>
-          <Link className="btn btn-light" to="/contact">
-            Talk to Trezeal <span>↗</span>
+          <Link
+            className="btn btn-light"
+            to={content?.ctaTo ?? "/contact"}
+          >
+            {content?.ctaLabel ?? "Talk to Trezeal"} <span>↗</span>
           </Link>
         </div>
       </section>

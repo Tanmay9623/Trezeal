@@ -7,11 +7,21 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
     ["/", "Home"],
-    ["/about", "About"],
     ["/services", "Services"],
-    ["/students", "Students"],
-    ["/projects", "Work"],
-    ["/resources", "Resources"],
+    ["/pricing", "Pricing"],
+    ["/blog", "Blog"],
+    ["/about", "About"],
+    ["/contact", "Contact"],
+  ];
+
+  const allLinks = [
+    ...links,
+    ["/students", "Student development"],
+    ["/interview-preparation", "Interview preparation"],
+    ["/freelance", "Freelance studio"],
+    ["/projects", "Projects"],
+    ["/careers", "Careers and partners"],
+    ["/faq", "FAQ"],
   ];
   return (
     <>
@@ -53,9 +63,11 @@ export default function Header() {
             </Link>
             <button
               className="menu-toggle"
+              type="button"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
+              aria-controls="mobile-navigation"
             >
               <i></i>
               <i></i>
@@ -63,11 +75,15 @@ export default function Header() {
           </div>
         </div>
         {open && (
-          <nav className="mobile-menu open" aria-label="Mobile navigation">
-            {[...links, ["/contact", "Contact"]].map(([to, label]) => (
-              <Link key={to} to={to} onClick={() => setOpen(false)}>
+          <nav
+            className="mobile-menu open"
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+          >
+            {allLinks.map(([to, label]) => (
+              <NavLink key={to} to={to} end={to === "/"} onClick={() => setOpen(false)}>
                 {label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         )}

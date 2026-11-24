@@ -7,12 +7,15 @@ export default function Hero() {
     {
       title: (
         <>
-          Build what’s
+          Building Digital
           <br />
-          <em>next.</em>
+          Solutions.
+          <br />
+          <em>Empowering Future Talent.</em>
         </>
       ),
-      copy: "We build digital solutions for businesses, help students develop practical skills, and support ambitious ideas from concept to launch.",
+      copy:
+        "We help businesses build useful technology and help students turn learning into practical skills and career confidence.",
     },
     {
       title: (
@@ -58,9 +61,14 @@ export default function Hero() {
         </p>
         <h1>{slides[index].title}</h1>
         <p className="hero-copy">{slides[index].copy}</p>
-        <Link className="btn btn-light" to="/services">
-          Explore what we do <span>↗</span>
-        </Link>
+        <div className="hero-cta-row">
+          <Link className="btn btn-light" to="/services">
+            Explore Our Services <span>↗</span>
+          </Link>
+          <Link className="hero-secondary-cta" to="/contact">
+            Let’s discuss your project <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
       </div>
       <div className="hero-bottom container">
         <span>

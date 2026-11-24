@@ -1,45 +1,32 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
+import FaqAccordion from "../components/common/FaqAccordion.jsx";
 import PageHero from "../components/common/PageHero.jsx";
+import { faqItems } from "../data/faqItems.js";
 import { pageHeroes } from "../data/pageHeroes.js";
 
 export default function FaqPage() {
-  const [open, setOpen] = useState(null);
+  const categories = [...new Set(faqItems.map((item) => item.category))];
+
   return (
     <div className="react-page">
       <PageHero key={pageHeroes.faq.image} {...pageHeroes.faq} />
       <section className="page-body">
         <div className="container">
-          <div className="faq-list">
-            {[
-              [
-                "What does Trezeal offer?",
-                "Software development, AI and automation, digital services, student mentoring and interview preparation.",
-              ],
-              [
-                "How is pricing decided?",
-                "Quotes are scoped per project after understanding the requirements.",
-              ],
-              [
-                "Do you guarantee placement?",
-                "No. We provide mentoring and preparation without promising employment outcomes.",
-              ],
-              [
-                "Can you guide a final-year project?",
-                "Yes. We can discuss project planning, implementation guidance and presentation preparation.",
-              ],
-            ].map(([question, answer], index) => (
-              <article className="faq-item" key={question}>
-                <button
-                  onClick={() => setOpen(open === index ? null : index)}
-                  aria-expanded={open === index}
-                >
-                  {question}
-                  <span>{open === index ? "×" : "+"}</span>
-                </button>
-                {open === index && <p>{answer}</p>}
-              </article>
-            ))}
+          {categories.map((category) => (
+            <section className="faq-category" key={category}>
+              <h2>{category}</h2>
+              <FaqAccordion
+                items={faqItems.filter((item) => item.category === category)}
+                idPrefix={`faq-${category.toLowerCase().replaceAll(" ", "-")}`}
+              />
+            </section>
+          ))}
+          <div className="faq-contact">
+            <h2>Need an answer for your specific project?</h2>
+            <Link className="btn btn-dark" to="/contact">
+              Ask Trezeal <span>↗</span>
+            </Link>
           </div>
         </div>
       </section>

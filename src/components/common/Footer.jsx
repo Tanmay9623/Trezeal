@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import NewsletterForm from "./NewsletterForm.jsx";
 import trezealLogo from "../../assets/images/trezeal-logo.png";
 
 export default function Footer() {
@@ -36,13 +37,19 @@ export default function Footer() {
             <span className="footer-label">EXPLORE</span>
             <Link to="/about">About Trezeal</Link>
             <Link to="/services">Services</Link>
+            <Link to="/pricing">Pricing</Link>
+            <Link to="/blog">Blog and resources</Link>
             <Link to="/students">Student guidance</Link>
             <Link to="/projects">Project capabilities</Link>
             <Link to="/interview-preparation">Interview preparation</Link>
+            <Link to="/freelance">Freelance studio</Link>
+            <Link to="/careers">Careers and partners</Link>
+            <Link to="/faq">Frequently asked questions</Link>
           </div>
           <div>
             <span className="footer-label">SAY HELLO</span>
             <Link to="/contact">Project & student enquiries</Link>
+            <a href="mailto:hello@trezeal.com">hello@trezeal.com</a>
             <p>
               Pune, Maharashtra, India
               <br />
@@ -50,20 +57,14 @@ export default function Footer() {
             </p>
           </div>
           <div className="newsletter">
-            <span className="footer-label">STAY CONNECTED</span>
+            <span className="footer-label">OCCASIONAL UPDATES</span>
             <p>
-              Get in touch for project updates, learning guidance and career
-              support.
+              Receive practical notes about digital work, learning and careers.
             </p>
-            <form onSubmit={(event) => event.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Your email address"
-                required
-                aria-label="Your email address"
-              />
-              <button aria-label="Subscribe">↗</button>
-            </form>
+            <NewsletterForm />
+            <Link className="text-link" to="/contact">
+              Have a project? Contact Trezeal <b>↗</b>
+            </Link>
           </div>
         </div>
         <div className="footer-bottom">
@@ -71,7 +72,26 @@ export default function Footer() {
           <div>
             <Link to="/privacy-policy">Privacy</Link>
             <Link to="/terms-and-conditions">Terms</Link>
-            <a href="#home">Back to top ↑</a>
+            <Link to="/refund-policy">Refunds</Link>
+            <Link to="/shipping-policy">Shipping</Link>
+            <Link to="/cookie-policy">Cookies</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
+            <button
+              className="footer-cookie-settings"
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new Event("trezeal:open-cookie-preferences"))
+              }
+            >
+              Cookie settings
+            </button>
+            <button
+              className="footer-back-to-top"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              type="button"
+            >
+              Back to top ↑
+            </button>
           </div>
           <span>TECHNOLOGY • CREATIVITY • GROWTH</span>
         </div>

@@ -56,6 +56,21 @@ export const seoByPath = {
     description:
       "Find practical resources for programming, interviews, resumes, GitHub and fresher career roadmaps.",
   },
+  "/blog": {
+    title: "Trezeal Blog | Technology, Business and Career Guides",
+    description:
+      "Read detailed, practical guides on software, business automation, website planning and career development.",
+  },
+  "/pricing": {
+    title: "Pricing and Project Quotes | Trezeal",
+    description:
+      "Compare Trezeal engagement options and learn what a project quote includes before you commit.",
+  },
+  "/careers": {
+    title: "Careers and Partners | Trezeal",
+    description:
+      "Explore collaboration with Trezeal across technology delivery, digital experience and practical learning.",
+  },
   "/contact": {
     title: "Contact Trezeal | Start a Conversation",
     description:
@@ -65,6 +80,36 @@ export const seoByPath = {
     title: "FAQ | Trezeal",
     description:
       "Find answers about Trezeal services, project pricing, student mentorship and interview preparation.",
+  },
+  "/privacy-policy": {
+    title: "Privacy Policy | Trezeal",
+    description:
+      "Review Trezeal’s draft privacy information for website enquiries, browser storage and optional analytics.",
+  },
+  "/terms-and-conditions": {
+    title: "Terms and Conditions | Trezeal",
+    description:
+      "Review Trezeal’s full draft terms for website use, project agreements, payment, intellectual property and dispute handling.",
+  },
+  "/cookie-policy": {
+    title: "Cookie Policy | Trezeal",
+    description:
+      "Learn how Trezeal stores analytics consent and when optional Google Analytics may load.",
+  },
+  "/refund-policy": {
+    title: "Refund and Cancellation Policy | Trezeal",
+    description:
+      "Review Trezeal’s draft refund-policy information and confirm project terms in a written agreement.",
+  },
+  "/shipping-policy": {
+    title: "Shipping and Digital Delivery Policy | Trezeal",
+    description:
+      "Understand Trezeal’s current digital delivery approach and what must be confirmed before physical sales.",
+  },
+  "/disclaimer": {
+    title: "Website Disclaimer | Trezeal",
+    description:
+      "Read important information about Trezeal’s educational content, technology examples and service outcomes.",
   },
 };
 
