@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/common/Header.jsx";
 import Footer from "./components/common/Footer.jsx";
+import ScrollToTop from "./components/common/ScrollToTop.jsx";
 import SeoMeta from "./components/common/SeoMeta.jsx";
 import Home from "./components/home/Home.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <>
       <SeoMeta />
+      <ScrollToTop />
       <Header />
       <main>
         <Routes>

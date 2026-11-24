@@ -262,14 +262,10 @@ button {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(1.04);
-  transition:
-    opacity 1s,
-    transform 6s;
+  transition: opacity 1s;
 }
 .hero-bg.active {
   opacity: 1;
-  transform: scale(1);
 }
 .hero-bg-one {
   background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=90");
