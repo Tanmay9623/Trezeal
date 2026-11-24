@@ -191,14 +191,6 @@
   opacity: 0;
 }
 
-.image-band-caption {
-  position: sticky;
-  inset: 0;
-  top: 0;
-  z-index: 2;
-  height: 430px;
-}
-
 @media (max-width: 760px) {
   .page-hero-with-image .page-hero-image-wrap {
     background-attachment: fixed;
@@ -207,9 +199,5 @@
   .hero .hero-bg,
   .image-band {
     background-attachment: fixed;
-  }
-
-  .image-band-caption {
-    height: 300px;
   }
 }
