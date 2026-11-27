@@ -12,9 +12,9 @@ Do not publish private DKIM keys or passwords.
 1. Create an organization account with Google Workspace or Zoho Mail.
 2. Add and verify `trezeal.com` in the provider's admin console. Verification
    normally uses a TXT record supplied for this domain.
-3. Create `hello@trezeal.com` as the primary contact mailbox.
-4. Create `support@trezeal.com` and `info@trezeal.com` as mailboxes, aliases or
-   groups, depending on the plan and who should receive each message.
+3. Use `info@trezeal.com` as the primary contact mailbox.
+4. Create `support@trezeal.com` as a mailbox, alias or group, depending on the
+   plan and who should receive each message.
 5. Test sending and receiving before changing MX records. Plan the MX change
    because it directs incoming mail for the whole domain.
 
@@ -119,21 +119,33 @@ reporting provider and access policy deliberately.
 
 ### 6. Connect the website contact form
 
-The site uses a Formspree-compatible endpoint configured through
-`VITE_FORMSPREE_ENDPOINT`. Create a form in Formspree, authorize the domain,
-and set the endpoint in a local `.env` file or the deployment platform's
-environment-variable settings:
+The contact form sends submissions through a Netlify Function, which connects
+to the SMTP server for `info@trezeal.com`. The SMTP credentials must only be
+configured as Netlify function environment variables. Never put SMTP passwords
+or private API keys in a `VITE_` variable or the browser bundle.
 
 ```text
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+SITE_ORIGIN=https://trezeal.com
+SMTP_HOST=<host-shown-in-your-Zoho-account>
+SMTP_PORT=465
+SMTP_USER=info@trezeal.com
+SMTP_PASS=<Zoho-app-specific-password>
+CONTACT_TO_EMAIL=info@trezeal.com
 ```
 
-The endpoint is intentionally not committed. Vite variables are public in the
-browser bundle, so only use a provider endpoint designed to be public; never
-put mail passwords, private API keys or secrets in a `VITE_` variable. The
-form reports a successful submission only when the endpoint returns success.
-Without an endpoint, it tells the visitor that the form was not sent and
-provides the `hello@trezeal.com` mail link.
+Use the SMTP hostname displayed in Zoho Mail for the account's data center;
+Zoho hostnames vary by region. Use the SMTP port and TLS mode specified there.
+The function sends from the authenticated mailbox and sets the visitor's
+validated address as `Reply-To`. It reports success only after SMTP accepts the
+message. Set `SITE_ORIGIN` to the exact production origin, including `https://`.
+The contact form's fallback email link is `info@trezeal.com`.
+
+Career applications use the same server-side SMTP settings. Configure
+`CAREERS_EMAIL=hello@trezeal.com` in Netlify to receive the candidate details
+and validated resume attachment. The applicant receives an acknowledgement
+with a generated application ID. Applications are email-only: no database,
+candidate portal, status tracking or admin dashboard stores them. Configure a
+mailbox retention policy appropriate for candidate information.
 
 The footer newsletter uses a separate `VITE_NEWSLETTER_ENDPOINT`. Configure it
 with a newsletter-capable form or mailing-list endpoint that supports browser
@@ -150,7 +162,7 @@ list unless the provider is configured to handle subscriptions and opt-outs.
 Trezeal
 Technology • Creativity • Growth
 Pune, Maharashtra, India | Remote project enquiries welcome
-hello@trezeal.com | https://trezeal.com
+info@trezeal.com | https://trezeal.com
 ```
 
 Add a phone number, job title, postal address or social links only after they
@@ -169,7 +181,7 @@ reply to this email with any additional context.
 
 Regards,
 Trezeal
-hello@trezeal.com
+info@trezeal.com
 https://trezeal.com
 ```
 
@@ -192,7 +204,7 @@ this message with the goal you would like to discuss.
 
 Regards,
 Trezeal
-hello@trezeal.com
+info@trezeal.com
 ```
 
 ### Contact-form confirmation
@@ -209,7 +221,7 @@ If you need to correct a detail, reply to this email and include the context.
 
 Regards,
 Trezeal
-hello@trezeal.com
+info@trezeal.com
 ```
 
 Only send this confirmation after the form provider confirms successful
@@ -264,9 +276,14 @@ testimonials, rankings, client stories or performance statistics.
 
 - [ ] Confirm legal business name, registered address and policy text with a
       qualified reviewer; replace clearly marked legal draft notices.
-- [ ] Confirm `hello@trezeal.com`, inbox routing, SPF, DKIM and DMARC.
-- [ ] Configure `VITE_FORMSPREE_ENDPOINT` in local/deployment environments and
-      test successful, invalid and failed form submissions.
+- [ ] Confirm `info@trezeal.com`, inbox routing, SPF, DKIM and DMARC.
+- [ ] Configure SMTP credentials as Netlify function environment variables and
+      test successful, invalid and failed contact form submissions.
+- [ ] Configure `CAREERS_EMAIL=hello@trezeal.com` and test a general-interest
+      application with a safe sample resume; confirm both email notifications,
+      attachment handling and mailbox retention.
+- [ ] Keep sample job roles labeled as demos; publish actual openings only
+      after confirming role details and deadlines in the source data.
 - [ ] Configure `VITE_NEWSLETTER_ENDPOINT`; verify consent, success, failure and
       unsubscribe behavior with the selected mailing-list provider.
 - [ ] Configure GA4 only if required; set `VITE_GA_MEASUREMENT_ID` and verify

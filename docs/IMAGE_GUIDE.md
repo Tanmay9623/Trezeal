@@ -39,8 +39,11 @@ The photo IDs below identify the original Unsplash CDN assets.
 
 Page hero sources are configured in `src/data/pageHeroes.js`. Home and student
 section sources are in `src/components/home/data.js`; project images are listed
-in `src/data/projects.js`. Update those paths and alt descriptions when
-replacing a stock photo. The social-sharing image is `public/og-image.svg`.
+in `src/data/projects.js`. Page heroes use page-specific files in
+`public/images/unsplash/`; keep hero images distinct across pages and update
+their descriptive alt text when changing a source. Update image paths and alt
+descriptions when replacing a stock photo. The social-sharing image is
+`public/og-image.svg`.
 
 Long-form sections may also use a locally rendered geometric SVG mark,
 gradients, and CSS patterns. Replace a photo slot only with an approved asset;

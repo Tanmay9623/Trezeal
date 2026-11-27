@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "./vanilla.css";
 
+.page-route-loading {
+  display: grid;
+  min-height: 50vh;
+  place-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .brand-mark-logo {
   display: block;
   width: 38px;
@@ -610,6 +618,7 @@
   height: 58px;
   display: grid;
   place-items: center;
+  padding: 0;
   border: 1px solid var(--line);
   border-radius: 50%;
   background:
@@ -617,6 +626,7 @@
     var(--white);
   color: var(--ink);
   font: 700 13px var(--display);
+  cursor: pointer;
 }
 
 .long-content-mark {
@@ -649,15 +659,44 @@
   letter-spacing: -0.06em;
 }
 
-.long-content-copy > p:not(.eyebrow),
-.long-content-copy li {
+.long-content-heading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.long-content-heading-indicator {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  font: 400 20px/1 var(--display);
+  letter-spacing: 0;
+}
+
+.long-content-body > p:not(.eyebrow),
+.long-content-body li {
   max-width: 760px;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.85;
 }
 
-.long-content-copy ul {
+.long-content-body ul {
   padding-left: 22px;
 }
 
@@ -773,11 +812,38 @@
 
 .contact-privacy-link {
   display: inline-block;
-  margin: -12px 0 18px 28px;
+  margin: 0;
   color: var(--accent);
   font-size: 12px;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.contact-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.contact-form-actions .btn {
+  margin: 0;
+  gap: 14px;
+}
+
+@media (max-width: 520px) {
+  .contact-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .contact-form-actions .btn {
+    width: 100%;
+    min-height: 48px;
+  }
 }
 
 .newsletter-form {
@@ -882,6 +948,12 @@
   .long-content-marker {
     width: 44px;
     height: 44px;
+  }
+
+  .long-content-mark {
+    inset: 5px auto auto 5px;
+    width: 34px;
+    height: 34px;
   }
 
   .pricing-teaser-layout {

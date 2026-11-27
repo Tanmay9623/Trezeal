@@ -26,24 +26,21 @@ export default function ContactSection({
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
 
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
-    if (!endpoint) {
-      setStatus({
-        message:
-          "Form delivery is not configured, so your message was not sent. Contact us by email instead:",
-        type: "error",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
     setStatus({ message: "", type: "" });
 
     try {
-      const response = await fetch(endpoint, {
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData);
+      payload.privacyConsent = form.elements.privacyConsent.checked;
+
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -100,7 +97,7 @@ export default function ContactSection({
             </div>
             <div>
               <span>EMAIL</span>
-              <a href="mailto:hello@trezeal.com">hello@trezeal.com</a>
+              <a href="mailto:info@trezeal.com">info@trezeal.com</a>
             </div>
             <div>
               <span>PHONE</span>
@@ -130,6 +127,14 @@ export default function ContactSection({
           </div>
         </div>
         <form className="contact-form" onSubmit={submit}>
+          <input
+            autoComplete="off"
+            aria-hidden="true"
+            hidden
+            name="website"
+            tabIndex={-1}
+            type="text"
+          />
           <div className="form-row">
             <label>
               Your name
@@ -201,13 +206,19 @@ export default function ContactSection({
               enquiry.
             </span>
           </label>
-          <Link className="contact-privacy-link" to="/privacy-policy">
-            Read the privacy policy
-          </Link>
-          <button className="btn btn-light" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Sending…" : "Send your message"}{" "}
-            {!isSubmitting && <span>↗</span>}
-          </button>
+          <div className="contact-form-actions">
+            <Link className="contact-privacy-link" to="/privacy-policy">
+              Read the privacy policy
+            </Link>
+            <button
+              className="btn btn-light"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending…" : "Send your message"}{" "}
+              {!isSubmitting && <span>↗</span>}
+            </button>
+          </div>
           <p
             className={`form-status ${status.type ? `form-status-${status.type}` : ""}`}
             role={status.type === "error" ? "alert" : "status"}
@@ -217,7 +228,7 @@ export default function ContactSection({
             {status.type === "error" && (
               <>
                 {" "}
-                <a href="mailto:hello@trezeal.com">hello@trezeal.com</a>
+                <a href="mailto:info@trezeal.com">info@trezeal.com</a>
               </>
             )}
           </p>

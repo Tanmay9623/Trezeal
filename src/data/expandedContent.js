@@ -473,7 +473,7 @@ export const standalonePages = {
         title: "Discuss a project or shared learning initiative.",
         paragraphs: [
           "Partnerships can include a scoped delivery collaboration, a workshop, a mentoring initiative or a referral arrangement. Each proposal should explain the audience, intended outcomes, responsibilities, budget, data access, intellectual property and how success will be reviewed. We will not imply endorsement or publish a partner logo without permission.",
-          "To start, use the contact form and select “Other” or send an email to hello@trezeal.com with the subject “Careers or partnership enquiry.” Include enough context to route your message and tell us the best way to respond. Current openings and partnership capacity must be confirmed directly; no unlisted vacancy or guaranteed opportunity is implied by this page.",
+          "To start, use the contact form and select “Other” or send an email to info@trezeal.com with the subject “Careers or partnership enquiry.” Include enough context to route your message and tell us the best way to respond. Current openings and partnership capacity must be confirmed directly; no unlisted vacancy or guaranteed opportunity is implied by this page.",
         ],
       },
     ],

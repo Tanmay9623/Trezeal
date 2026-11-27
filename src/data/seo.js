@@ -57,9 +57,9 @@ export const seoByPath = {
       "Find practical resources for programming, interviews, resumes, GitHub and fresher career roadmaps.",
   },
   "/blog": {
-    title: "Trezeal Blog | Technology, Business and Career Guides",
+    title: "Trezeal Journal | Insights, Ideas & Innovation",
     description:
-      "Read detailed, practical guides on software, business automation, website planning and career development.",
+      "Explore practical technology, software, business and career insights from Trezeal.",
   },
   "/pricing": {
     title: "Pricing and Project Quotes | Trezeal",
@@ -67,9 +67,9 @@ export const seoByPath = {
       "Compare Trezeal engagement options and learn what a project quote includes before you commit.",
   },
   "/careers": {
-    title: "Careers and Partners | Trezeal",
+    title: "Careers at Trezeal | Build Your Future",
     description:
-      "Explore collaboration with Trezeal across technology delivery, digital experience and practical learning.",
+      "Explore confirmed Trezeal job opportunities, practical learning and thoughtful teamwork. Demo roles are clearly marked.",
   },
   "/contact": {
     title: "Contact Trezeal | Start a Conversation",

@@ -3,21 +3,28 @@ export const legalPages = {
     eyebrow: "PRIVACY",
     title: "Privacy policy",
     description:
-      "Draft dated 24 November 2026. A qualified lawyer and the operating business must verify this policy against the actual data systems before launch.",
-    lastUpdated: "24 November 2026",
+      "Draft dated 26 November 2026. A qualified lawyer and the operating business must verify this policy against the actual data systems before launch.",
+    lastUpdated: "26 November 2026",
     sections: [
       {
         title: "Who is responsible",
         paragraphs: [
           "This draft describes how Trezeal may handle information submitted through this website. Confirm the legal name and registered business details of the responsible organization before publication.",
-          "For questions about a privacy request, contact hello@trezeal.com. Add a dedicated privacy contact if one is established.",
+          "For questions about a privacy request, contact info@trezeal.com. Add a dedicated privacy contact if one is established.",
         ],
       },
       {
         title: "Information submitted through the contact form",
         paragraphs: [
           "The contact form can collect your name, email address, optional phone number, enquiry category, optional project budget and message. This information is used to understand and respond to your enquiry.",
-          "When Formspree or another form processor is configured, identify that provider, its role, data location, retention settings and relevant privacy terms here. Do not launch the form until the provider and handling practices have been reviewed.",
+          "The form sends its contents to Trezeal through a Netlify Function and the configured SMTP email provider. Confirm the provider, data location, access controls, retention settings and applicable privacy terms before launch.",
+        ],
+      },
+      {
+        title: "Career applications and resumes",
+        paragraphs: [
+          "If you apply for a role or send a general-interest application, the site may collect your contact details, location, education, experience, profile links, skills, cover letter and resume. The information is sent by email to the Trezeal careers inbox so the team can review and respond. An application ID and acknowledgement are sent by email when delivery succeeds.",
+          "Career applications and resumes are not stored in a website database or candidate portal. The careers mailbox and its mail provider may retain the application and attachment under their own storage and backup practices. Trezeal must set an appropriate mailbox access and retention process, and should not request unnecessary sensitive information.",
         ],
       },
       {
@@ -58,7 +65,7 @@ export const legalPages = {
       {
         title: "Processors and third-party recipients",
         paragraphs: [
-          "Website hosting, form handling, email delivery, analytics and project tools may be provided by third parties. A provider receives information only as needed for its role, but its own privacy terms and technical practices also apply. The actual provider list must be published or made available before launch, including the form service configured through VITE_FORMSPREE_ENDPOINT and any newsletter provider configured through VITE_NEWSLETTER_ENDPOINT.",
+          "Website hosting, form handling, email delivery, analytics and project tools may be provided by third parties. A provider receives information only as needed for its role, but its own privacy terms and technical practices also apply. The actual provider list must be published or made available before launch, including the Netlify contact function and its SMTP provider and any newsletter provider configured through VITE_NEWSLETTER_ENDPOINT.",
           "Trezeal does not authorize service providers to use enquiry information for unrelated purposes merely because they process it. Review contracts, data-processing terms, subprocessors, security measures and deletion procedures. Information may also be disclosed where required by law, to protect rights and safety, or as part of a business reorganization subject to appropriate safeguards and applicable requirements.",
         ],
       },
@@ -66,7 +73,7 @@ export const legalPages = {
         title: "International transfers",
         paragraphs: [
           "A hosting, form, email or analytics provider may process information in a country other than the one where you live. The location and transfer mechanism depend on the provider account and its configuration. Confirm the countries involved and the safeguards offered by the provider before accepting personal information through the website.",
-          "Where transfer rules apply, Trezeal should use a legally recognized mechanism and provide any required information about it. A general statement that a provider is reputable is not a substitute for checking the applicable contract, adequacy status or safeguard. Contact hello@trezeal.com to ask about the systems currently used; do not send sensitive information in that request.",
+          "Where transfer rules apply, Trezeal should use a legally recognized mechanism and provide any required information about it. A general statement that a provider is reputable is not a substitute for checking the applicable contract, adequacy status or safeguard. Contact info@trezeal.com to ask about the systems currently used; do not send sensitive information in that request.",
         ],
       },
       {
@@ -87,21 +94,21 @@ export const legalPages = {
         title: "Your privacy rights in India",
         paragraphs: [
           "Depending on the Digital Personal Data Protection Act, 2023, rules in force, commencement provisions and your circumstances, you may have rights relating to access to information about processing, correction or completion of personal data, erasure, withdrawal of consent and grievance redressal. The law’s application and the exact procedure must be confirmed at the time this policy is published; this summary is not legal advice.",
-          "To make a request, email hello@trezeal.com with the subject “Privacy request.” Provide enough detail to locate the relevant information, but do not include identity documents unless they are reasonably necessary and a secure process is arranged. Trezeal may need to verify the requester and may decline or limit a request where the law permits. A grievance contact and response process should be confirmed for the responsible entity.",
+          "To make a request, email info@trezeal.com with the subject “Privacy request.” Provide enough detail to locate the relevant information, but do not include identity documents unless they are reasonably necessary and a secure process is arranged. Trezeal may need to verify the requester and may decline or limit a request where the law permits. A grievance contact and response process should be confirmed for the responsible entity.",
         ],
       },
       {
         title: "Rights in the European Economic Area and United Kingdom",
         paragraphs: [
           "Where applicable data-protection law grants rights, individuals may be able to request access, correction, erasure, restriction or portability, object to particular processing, withdraw consent and complain to a supervisory authority. The availability of each right depends on the purpose and legal basis. These rights are not absolute in every situation, and lawful exceptions may apply.",
-          "A request may be sent to hello@trezeal.com. Trezeal should respond within the legally required period, explain any permitted extension and provide a reason when a request cannot be fully met. If the responsible organization is not established in the relevant region, local representative and contact requirements must be assessed separately by legal counsel.",
+          "A request may be sent to info@trezeal.com. Trezeal should respond within the legally required period, explain any permitted extension and provide a reason when a request cannot be fully met. If the responsible organization is not established in the relevant region, local representative and contact requirements must be assessed separately by legal counsel.",
         ],
       },
       {
         title: "Rights in California and other United States states",
         paragraphs: [
           "If a US state privacy statute applies, residents may have rights to know, access, correct, delete or obtain certain personal information and to opt out of specific forms of sale, targeted advertising or profiling. The scope, thresholds, terminology and exemptions vary by state. Trezeal must assess whether each law applies before making a compliance claim.",
-          "The current website does not intentionally sell contact-form information, but the use of analytics or advertising technologies must be reviewed against the applicable statutory definitions. Requests can be sent to hello@trezeal.com. A consumer may use an authorized agent where local law permits, and Trezeal may take reasonable steps to verify identity and authority without requesting more information than necessary.",
+          "The current website does not intentionally sell contact-form information, but the use of analytics or advertising technologies must be reviewed against the applicable statutory definitions. Requests can be sent to info@trezeal.com. A consumer may use an authorized agent where local law permits, and Trezeal may take reasonable steps to verify identity and authority without requesting more information than necessary.",
         ],
       },
       {
@@ -115,14 +122,14 @@ export const legalPages = {
         title: "Children and young people",
         paragraphs: [
           "The website is intended for businesses, adult learners and other people able to make an enquiry. It is not designed to collect personal information directly from children. Do not submit a child’s personal details through the public form. If a mentoring service is offered to a minor, the business must establish an appropriate guardian-consent and safeguarding process before collecting information or arranging sessions.",
-          "If Trezeal learns that personal information was collected from a child without an appropriate legal basis, it should take reasonable steps to restrict access and delete the information where required. A parent or guardian may contact hello@trezeal.com with a concern. Any age threshold, consent process and retention rule must be checked against the law that applies to the actual service and location.",
+          "If Trezeal learns that personal information was collected from a child without an appropriate legal basis, it should take reasonable steps to restrict access and delete the information where required. A parent or guardian may contact info@trezeal.com with a concern. Any age threshold, consent process and retention rule must be checked against the law that applies to the actual service and location.",
         ],
       },
       {
         title: "Changes and contact",
         paragraphs: [
           "This policy may be updated when the business, website features, providers or legal requirements change. The latest revision date appears at the top of the page. A material change should be communicated through an appropriate channel when required. Continuing to use the website does not replace consent where the law requires a separate affirmative choice.",
-          "For questions, requests or complaints, email hello@trezeal.com and include “Privacy” in the subject. Trezeal is described publicly as based in Pune, Maharashtra, India; a registered business name, full postal address and privacy officer details have not been supplied and must be added after verification. You may also have the right to contact a competent data-protection authority.",
+          "For questions, requests or complaints, email info@trezeal.com and include “Privacy” in the subject. Trezeal is described publicly as based in Pune, Maharashtra, India; a registered business name, full postal address and privacy officer details have not been supplied and must be added after verification. You may also have the right to contact a competent data-protection authority.",
         ],
       },
     ],
@@ -298,7 +305,7 @@ export const legalPages = {
       {
         title: "Contact and last updated",
         paragraphs: [
-          "Questions about these terms may be sent to hello@trezeal.com with the subject “Terms and conditions.” The public site lists Pune, Maharashtra, India, but a complete registered postal address, legal entity name and telephone number have not been supplied. Add verified legal contact details before launch and before accepting payments.",
+          "Questions about these terms may be sent to info@trezeal.com with the subject “Terms and conditions.” The public site lists Pune, Maharashtra, India, but a complete registered postal address, legal entity name and telephone number have not been supplied. Add verified legal contact details before launch and before accepting payments.",
           "Last updated: 24 November 2026. This is a working business draft, not legal advice or a substitute for a lawyer’s review. Have counsel confirm acceptance mechanics, governing law, refund language, IP transfer, liability limits, indemnities, dispute resolution and any consumer-specific requirements for the actual services and customer locations.",
         ],
       },
@@ -328,7 +335,7 @@ export const legalPages = {
       {
         title: "Questions",
         paragraphs: [
-          "For questions about the site’s storage or privacy practices, email hello@trezeal.com. Review this page against the final production configuration and applicable requirements before launch.",
+          "For questions about the site’s storage or privacy practices, email info@trezeal.com. Review this page against the final production configuration and applicable requirements before launch.",
         ],
       },
       {
@@ -356,7 +363,7 @@ export const legalPages = {
         title: "Retention, updates and contact",
         paragraphs: [
           "Preference storage remains in the browser until it expires, is overwritten or is cleared by the visitor; the exact persistence period should be confirmed in the deployed implementation. Third-party cookie and analytics retention follows the provider settings selected by the site owner. Review those settings periodically and remove tags that are no longer needed.",
-          "This policy may change when the website adds or removes a technology. The revision date appears above. For questions, email hello@trezeal.com. Before launch, conduct a consent audit in a clean browser profile and confirm that optional tracking is blocked until an affirmative choice where required by applicable law.",
+          "This policy may change when the website adds or removes a technology. The revision date appears above. For questions, email info@trezeal.com. Before launch, conduct a consent audit in a clean browser profile and confirm that optional tracking is blocked until an affirmative choice where required by applicable law.",
         ],
       },
     ],
@@ -372,7 +379,7 @@ export const legalPages = {
         title: "Confirm terms before purchase",
         paragraphs: [
           "No general refund promise is created by this draft. The applicable payment and cancellation terms depend on the service, work already completed, third-party costs and any signed agreement.",
-          "Replace this page with terms reviewed for the operating business and applicable consumer or commercial law. Contact hello@trezeal.com with questions about an existing written agreement.",
+          "Replace this page with terms reviewed for the operating business and applicable consumer or commercial law. Contact info@trezeal.com with questions about an existing written agreement.",
         ],
       },
       {
@@ -385,7 +392,7 @@ export const legalPages = {
       {
         title: "How to cancel or request a refund",
         paragraphs: [
-          "Send a written request to hello@trezeal.com using the subject “Cancellation or refund,” and include your name, the relevant invoice or proposal reference, the service and the outcome you are requesting. Do not include full payment-card details. Trezeal may ask for limited information to verify the engagement and route the request to the responsible person.",
+          "Send a written request to info@trezeal.com using the subject “Cancellation or refund,” and include your name, the relevant invoice or proposal reference, the service and the outcome you are requesting. Do not include full payment-card details. Trezeal may ask for limited information to verify the engagement and route the request to the responsible person.",
           "The request will be assessed against the signed agreement, work completed, approved expenses, any digital material already supplied and applicable consumer or commercial law. Trezeal should provide a written response explaining the decision, any amount due or refundable, and the expected processing method where a refund is approved. Statutory time limits and remedies take precedence over a less favorable contract term.",
         ],
       },
@@ -406,7 +413,7 @@ export const legalPages = {
       {
         title: "Payment disputes and consumer rights",
         paragraphs: [
-          "If you believe a charge is incorrect, contact hello@trezeal.com promptly and describe the invoice line or service in question. Trezeal will review the agreement and payment record. You should contact your payment provider if you believe a payment method has been used without authorization, while also notifying Trezeal so the issue can be investigated.",
+          "If you believe a charge is incorrect, contact info@trezeal.com promptly and describe the invoice line or service in question. Trezeal will review the agreement and payment record. You should contact your payment provider if you believe a payment method has been used without authorization, while also notifying Trezeal so the issue can be investigated.",
           "Nothing in this policy limits mandatory consumer rights, statutory cooling-off periods, remedies for defective services or rights that cannot be waived. The applicable law can depend on where the customer resides and whether the service is business-to-business or consumer-facing. Obtain legal advice if a dispute cannot be resolved informally.",
         ],
       },
@@ -414,7 +421,7 @@ export const legalPages = {
         title: "Last updated and legal review",
         paragraphs: [
           "Last updated: 24 November 2026. This policy is a draft for business and legal review. Confirm the contracting entity, payment processor, cancellation windows, refund timelines, tax treatment and consumer law before accepting customer payments.",
-          "Questions should be sent to hello@trezeal.com. A full postal address and public telephone number have not been supplied. Add verified contact information and a clear process for escalation before launch. The signed agreement and mandatory legal rights govern if they conflict with a summary on this page.",
+          "Questions should be sent to info@trezeal.com. A full postal address and public telephone number have not been supplied. Add verified contact information and a clear process for escalation before launch. The signed agreement and mandatory legal rights govern if they conflict with a summary on this page.",
         ],
       },
     ],
@@ -443,7 +450,7 @@ export const legalPages = {
       {
         title: "Questions and changes",
         paragraphs: [
-          "For questions about an active digital delivery, email hello@trezeal.com with the project reference and a description of the issue. Do not send passwords or private keys. Any replacement, correction or refund is handled under the project agreement, Refund and Cancellation Policy and applicable law.",
+          "For questions about an active digital delivery, email info@trezeal.com with the project reference and a description of the issue. Do not send passwords or private keys. Any replacement, correction or refund is handled under the project agreement, Refund and Cancellation Policy and applicable law.",
           "Last updated: 24 November 2026. Review this page if Trezeal begins selling physical products, downloadable products or subscriptions. A lawyer should review any shipping terms, tax disclosures and delivery promises before those sales are enabled.",
         ],
       },
@@ -494,7 +501,7 @@ export const legalPages = {
       {
         title: "Contact and review",
         paragraphs: [
-          "Questions about this disclaimer may be sent to hello@trezeal.com. A full postal address and phone number have not been provided and should be added only after confirmation.",
+          "Questions about this disclaimer may be sent to info@trezeal.com. A full postal address and phone number have not been provided and should be added only after confirmation.",
           "Last updated: 24 November 2026. This disclaimer should be reviewed by a qualified lawyer and aligned with the actual services, audience, jurisdictions and marketing claims before launch. It does not remove any legal right or liability that cannot lawfully be excluded.",
         ],
       },

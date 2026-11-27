@@ -49,7 +49,7 @@ export default function Footer() {
           <div>
             <span className="footer-label">SAY HELLO</span>
             <Link to="/contact">Project & student enquiries</Link>
-            <a href="mailto:hello@trezeal.com">hello@trezeal.com</a>
+            <a href="mailto:info@trezeal.com">info@trezeal.com</a>
             <p>
               Pune, Maharashtra, India
               <br />

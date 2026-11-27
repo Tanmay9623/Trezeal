@@ -141,7 +141,7 @@ export const faqItems = [
     category: "Contact and location",
     question: "How can I contact Trezeal?",
     answer:
-      "Use the contact form or email hello@trezeal.com. A public phone number and street address have not been supplied; meetings are arranged by appointment.",
+      "Use the contact form or email info@trezeal.com. A public phone number and street address have not been supplied; meetings are arranged by appointment.",
   },
   {
     category: "Contact and location",

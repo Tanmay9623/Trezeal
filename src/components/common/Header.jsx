@@ -20,7 +20,6 @@ export default function Header() {
     ["/interview-preparation", "Interview preparation"],
     ["/freelance", "Freelance studio"],
     ["/projects", "Projects"],
-    ["/careers", "Careers and partners"],
     ["/faq", "FAQ"],
   ];
   return (
